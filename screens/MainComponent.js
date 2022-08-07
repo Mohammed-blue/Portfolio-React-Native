@@ -1,6 +1,6 @@
 import { Image, Text, Platform, StyleSheet, View } from 'react-native';
 import Constants from 'expo-constants';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import {
     createDrawerNavigator,
@@ -10,6 +10,7 @@ import {
 import { Icon } from 'react-native-elements';
 import logo from '../assets/images/HygieiaFitnessLogo.png'
 import HomeScreen from './HomeScreen';
+import HfCards from '../features/HfCard/HfCards';
 import AdviceScreen from './AdviceScreen';
 import BusinessScreen from './BusinessScreen';
 import SuccessScreen from './SuccessScreen';
@@ -28,7 +29,10 @@ const HomeNavigator = () => {
     const Stack = createStackNavigator();
 
     return (
-        <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Navigator
+            screenOptions={screenOptions}
+            initialRouteName='HomeScreen'
+        >
             <Stack.Screen
                 name='Home'
                 component={HomeScreen}
@@ -44,6 +48,13 @@ const HomeNavigator = () => {
                     )
                 })}
             />
+            {/* <Stack.Screen
+                name='Home'
+                component={HomeScreen}
+            /> */}
+            {/* <Stack.Screen
+                name=
+            /> */}
         </Stack.Navigator>
     )
 }
@@ -152,7 +163,7 @@ const LoginNavigator = () => {
         <Stack.Navigator screenOptions={screenOptions}>
             <Stack.Screen
                 name='Login'
-                component={ShopScreen}
+                component={LoginScreen}
                 options={({ navigation }) => ({
                     title: 'Login',
                     headerLeft: () => (
@@ -215,7 +226,7 @@ const Main = () => {
             <Drawer.Navigator
                 initialRouteName='Home'
                 drawerContent={CustomDrawerContent}
-                drawerStyle={{ backgroundColor: 'hsl(19, 800%, 80%)' }}
+                drawerStyle={{ backgroundColor: 'hsl(19, 800%, 90%)' }}
             >
                 <Drawer.Screen
                     name='Home'
