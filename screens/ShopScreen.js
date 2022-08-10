@@ -1,5 +1,4 @@
-import { ScrollView, Text, View} from 'react-native';
-import { useState } from 'react';
+import {View} from 'react-native';
 import ShopCard from '../features/shopCard/shopCards'
 
 const ShopScreen = () => {
