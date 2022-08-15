@@ -8,22 +8,9 @@ import { useState } from 'react';
 const HfCard = ({ navigation }) => {
     const [homeCard, setHomeCard] = useState(HfData);
 
+    console.log('this homecard in HfCards;', homeCard);
     const renderHfCardItems = ({ item: homeCard }) => {
         return (
-            // <ListItem>
-            //     <Avatar source={homeCard.image} />
-            //     <ListItem.Content>
-            //         <ListItem.Title>{homeCard.name}</ListItem.Title>
-            //     </ListItem.Content>
-            // </ListItem>
-
-            // <Card >
-            //     <Card.Image
-            //     source={homeCard.image}
-            //     style={styles.tileCard}
-            //     />
-            //     <Card.Title>{homeCard.name}</Card.Title>
-            // </Card>
             <View
                 style={styles.tileCard}
             >
@@ -33,8 +20,8 @@ const HfCard = ({ navigation }) => {
                 // onPress={() => navigation.navigate(''{ campsite })}
                 imageSrc={homeCard.image}
                 titleStyle={{fontSize: 40, color: '#00ccff'}}
-                // height={300}
-                // width={200}
+                onPress={() => navigation.navigate('Workout', { homeCard })}
+
             />
         </View>
         );

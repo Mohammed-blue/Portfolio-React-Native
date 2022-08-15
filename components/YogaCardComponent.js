@@ -5,10 +5,10 @@ import { useState } from 'react';
 // import Loading from '../components/LoadingComponent';
 // import * as Animatable from 'react-native-animatable';
 
-
-const StrengthCardComponent = () => {
-    <ScrollView>
-            <Text>Hello, Testing Strength</Text>
-    </ScrollView>
+const HiitCardComponent = () => {
+    return (
+        <ScrollView>
+            <Text>Hello, Testing Yoga</Text>
+        </ScrollView>
+    )
 }
-

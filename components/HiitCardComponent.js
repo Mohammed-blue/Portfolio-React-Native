@@ -1,5 +1,5 @@
 import { ScrollView, Text } from 'react-native';
-import ShopData  from '../../shared/shopData';
+// import ShopData  from '../../shared/shopData';
 import { Avatar, ListItem, Card, Tile} from 'react-native-elements';
 import { useState } from 'react';
 // import Loading from '../components/LoadingComponent';
@@ -8,7 +8,9 @@ import { useState } from 'react';
 const HiitCardComponent = () => {
     return (
         <ScrollView>
-            <Text>Hello, Testing</Text>
+            <Text>Hello, Testing HIIT</Text>
         </ScrollView>
     )
 }
+
+export default HiitCardComponent

@@ -17,6 +17,10 @@ import SuccessScreen from './SuccessScreen';
 import ShopScreen from './ShopScreen';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
+import AdviceInfoScreen from './AdviceInfoScreen';
+// import HiitCardComponent from '../components/HiitCardComponent'
+import Workout from '../components/Workout'
+
 
 const Drawer = createDrawerNavigator()
 
@@ -48,10 +52,21 @@ const HomeNavigator = () => {
                     )
                 })}
             />
-            {/* <Stack.Screen
-                name='Home'
-                component={HomeScreen}
-            /> */}
+            <Stack.Screen
+                name='Workout'
+                component={Workout}
+                options={({ navigation }) => ({
+                    headerLeft: () => (
+                        <Icon
+                            name='home'
+                            type='font-awesome'
+                            iconStyle={styles.stackIcon}
+                            onPress={() => navigation.toggleDrawer()}
+                            // onPress={() => navigation.navigate(HIIT)}
+                        />
+                    )
+                })}
+            />
             {/* <Stack.Screen
                 name=
             /> */}
@@ -63,7 +78,10 @@ const AdviceNavigator = () => {
     const Stack = createStackNavigator();
 
     return (
-        <Stack.Navigator screenOptions={screenOptions}>
+        <Stack.Navigator
+            initialRouteName='Advice'
+            screenOptions={screenOptions}
+        >
             <Stack.Screen
                 name='Advice'
                 component={AdviceScreen}
@@ -79,6 +97,14 @@ const AdviceNavigator = () => {
                     )
                 })}
             />
+            {/* <Stack.Screen
+                name='AdviceInfo'
+                component={AdviceInfoScreen}
+                option={({ route }) => ({
+                    title: route.params.advice.name
+                })}
+            /> */}
+
         </Stack.Navigator>
     )
 }
